@@ -560,23 +560,49 @@ Future architecture should be clearly distinguished from currently implemented o
 
 # Documentation Status Model
 
-Engineering documentation may represent different maturity states.
+Engineering documentation may describe architecture or capabilities at different phases of the eco619 engineering lifecycle.
 
-Recommended status classifications include:
+Recommended engineering phase classifications include:
 
 | Status | Meaning |
 |---|---|
 | **Concept** | Engineering idea under initial consideration. |
-| **Research** | Alternatives or feasibility currently being evaluated. |
-| **Proposed Architecture** | Defined architectural approach awaiting validation or implementation evidence. |
-| **Active Development** | Architecture currently being implemented or tested. |
-| **Active Integration** | Validated components being integrated into a larger operating system. |
-| **Validated** | Architecture or responsibility has passed its defined validation criteria. |
-| **Implemented** | Capability has been incorporated into its intended platform boundary. |
-| **Superseded** | Preserved for decision history but replaced by a later architecture or decision. |
+| **Research** | Alternatives, requirements, or feasibility currently being evaluated. |
+| **Proposed Architecture** | Defined architectural approach awaiting further engineering work. |
+| **Active Development** | Architecture or capability currently being developed before its defined responsibility has completed Validation. |
+| **Validation** | Defined responsibilities are being tested independently to establish that they perform as intended. |
+| **Implementation** | Previously validated responsibilities are being incorporated into the larger platform while preserving their established core responsibilities. |
+| **Verification** | Implemented capabilities are being checked at the applicable platform level to confirm correct behavior, connections, and handoffs. |
+| **Integration** | Verified capabilities are being established as part of the complete operating system. |
+| **Documentation** | Engineering results, architecture, decisions, and resulting system state are being formally recorded. |
+| **Continuous Evolution** | The established platform continues to evolve as new requirements, evidence, technologies, or capabilities emerge. |
+| **Superseded** | Preserved for engineering history but replaced by a later architecture or decision. |
 
-A document's status describes its engineering maturity. It should not be interpreted as a guarantee of production deployment unless the document explicitly states that status.
+These classifications describe the engineering phase of the architecture or capability being documented. They should not be confused with the editorial or publication status of the document itself.
 
+A document may therefore have a status such as **Active** while describing a platform currently in the **Implementation** phase.
+
+The engineering phases should retain their established meaning and sequence:
+
+```text
+Question
+    ↓
+Architecture
+    ↓
+Responsibility
+    ↓
+Validation
+    ↓
+Implementation
+    ↓
+Verification
+    ↓
+Integration
+    ↓
+Documentation
+    ↓
+Continuous Evolution
+```
 ---
 
 # Relationship to Other Repositories
