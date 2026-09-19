@@ -465,11 +465,11 @@ Validation
     ↓
 Implementation
     ↓
-Verification
-    ↓
 Integration
     ↓
-Documentation
+Implementation Verification
+    ↓
+Baseline Testing
     ↓
 Continuous Evolution
 ```
@@ -570,19 +570,20 @@ Recommended engineering phase classifications include:
 | **Research** | Alternatives, requirements, or feasibility currently being evaluated. |
 | **Proposed Architecture** | Defined architectural approach awaiting further engineering work. |
 | **Active Development** | Architecture or capability currently being developed before its defined responsibility has completed Validation. |
-| **Validation** | Defined responsibilities are being tested independently to establish that they perform as intended. |
-| **Implementation** | Previously validated responsibilities are being incorporated into the larger platform while preserving their established core responsibilities. |
-| **Verification** | Implemented capabilities are being checked at the applicable platform level to confirm correct behavior, connections, and handoffs. |
-| **Integration** | Verified capabilities are being established as part of the complete operating system. |
-| **Documentation** | Engineering results, architecture, decisions, and resulting system state are being formally recorded. |
-| **Continuous Evolution** | The established platform continues to evolve as new requirements, evidence, technologies, or capabilities emerge. |
+| **Validation** | Defined responsibilities are tested independently to establish that they perform as intended. |
+| **Implementation** | Previously validated responsibilities are incorporated into the larger platform while preserving their established responsibilities and interfaces. |
+| **Integration** | Implemented responsibilities are connected within the singular execution environment so they can operate together through their defined handoffs and dependencies. |
+| **Implementation Verification** | The integrated platform is exercised to confirm that responsibilities execute, connect, hand off information, recover, and operate together as designed. |
+| **Baseline Testing** | The integrated and implementation-verified platform is exercised against controlled or known information to establish baseline system behavior and evaluate whether processing results, relationships, verification states, and resulting information are supported by the authoritative source record. |
+| **Documentation** | Engineering results, architecture, decisions, testing findings, and resulting system state are formally recorded. Documentation occurs throughout the engineering lifecycle and is not treated as a sequential platform phase. |
+| **Continuous Evolution** | The established platform continues to evolve as new requirements, evidence, technologies, capabilities, and testing findings emerge. |
 | **Superseded** | Preserved for engineering history but replaced by a later architecture or decision. |
 
 These classifications describe the engineering phase of the architecture or capability being documented. They should not be confused with the editorial or publication status of the document itself.
 
 A document may therefore have a status such as **Active** while describing a platform currently in the **Implementation** phase.
 
-The engineering phases should retain their established meaning and sequence:
+The platform engineering phases should retain their established meaning and sequence. Documentation is maintained throughout the lifecycle rather than treated as a sequential platform phase:
 
 ```text
 Question
@@ -595,11 +596,11 @@ Validation
     ↓
 Implementation
     ↓
-Verification
-    ↓
 Integration
     ↓
-Documentation
+Implementation Verification
+    ↓
+Baseline Testing
     ↓
 Continuous Evolution
 ```
