@@ -22,7 +22,7 @@
 | Version | Date | Description |
 |---------|------|-------------|
 | 1.0 | July 2026 | Initial Platform Architecture |
-| 2.0 | August 2026 | Expanded foundational architecture to incorporate evidence preservation, verification separation, autonomous execution, provider independence, authorization, accountability, and traceable knowledge evolution. |
+| 2.1 | September 2026 | Expanded foundational architecture to establish information independence from file format, deterministic control boundaries for autonomous systems, and updated platform-specific references. |
 
 ---
 
@@ -106,6 +106,12 @@ Information should not be unnecessarily reduced in ways that destroy context req
 
 Where applicable, systems should preserve structure, chronology, metadata, visual information, communication relationships, provenance, and other meaningful characteristics of authoritative information.
 
+## Information Independent of Format
+
+File formats are technical containers for organizational information. Architecture should not make the usefulness of information dependent upon whether it exists in a preferred or easily processed format.
+
+Where information is relevant to a platform's responsibility, the platform should determine how that information can be identified, recovered, validated, verified where applicable, and connected while preserving its relationship to the authoritative source.
+
 ## Verification Separation
 
 Processing success and evidentiary trust are separate states.
@@ -123,6 +129,14 @@ AI capabilities should enter through defined abstraction boundaries so providers
 Platforms should autonomously resolve conditions through available capabilities before escalating unresolved conditions to human intervention.
 
 Human-in-the-loop participation is a governed escalation path rather than a substitute for available automated processing.
+
+## Deterministic Control Boundaries
+
+Autonomous and AI-assisted capabilities should operate within deterministic control boundaries that are independent of the reasoning system being governed.
+
+Where an action is prohibited, restricted, or requires authorization, the component requesting the action should not have authority to override the control enforcing that boundary.
+
+The control boundary should evaluate whether the requested action is permitted and provide only the result necessary for execution to continue or stop.
 
 ## Authorization Inheritance
 
@@ -177,6 +191,7 @@ Platform Architecture
 │
 └── Governance & Security
     ├── Autonomous Governance
+    ├── Deterministic Control
     ├── Human-in-the-Loop Escalation
     ├── Identity & Authorization
     ├── Audit
@@ -309,6 +324,7 @@ Responsible for controlling how autonomous intelligence operates within organiza
 Capabilities may include:
 
 - autonomous governance;
+- deterministic control boundaries;
 - unresolved-state management;
 - human-in-the-loop escalation;
 - identity;
@@ -447,6 +463,37 @@ The resolution history should preserve how the unresolved condition occurred, wh
 
 ---
 
+##Deterministic Control Architecture
+
+Autonomous reasoning and deterministic authority represent separate architectural responsibilities.
+
+AI-assisted or autonomous components may determine what action they want to perform, but the authority to permit a governed action should not depend solely upon the reasoning of the component requesting it.
+
+Where deterministic restrictions apply, execution should pass through an independent control boundary.
+
+Autonomous / AI Component
+          │
+          ▼
+    Requested Action
+          │
+          ▼
+Deterministic Control Boundary
+          │
+     ┌────┴────┐
+     │         │
+ Permitted   Denied
+     │         │
+     ▼         ▼
+  Continue    Stop
+
+The reasoning component may provide the information required to evaluate the request, but it should not be capable of persuading, reasoning around, or independently overriding a deterministic restriction.
+
+Deterministic controls may govern conditions such as authorization, protected information, prohibited actions, execution boundaries, external communication, or other platform-defined restrictions.
+
+The specific control mechanisms may vary among platforms. The foundational requirement is separation between reasoning about an action and authority to permit that action.
+
+---
+
 # AI Provider Architecture
 
 AI is treated as a platform capability rather than the architectural foundation.
@@ -506,13 +553,13 @@ Individual platform architectures should identify whether enterprise identity in
 Knowledge is not assumed to remain static.
 
 ```text
-Evidence at Time A
+Information at Time A
        │
        ▼
 Knowledge at Time A
        │
        ▼
-New Evidence at Time B
+New Information at Time B
        │
        ▼
 Relationship / Relevance
@@ -536,7 +583,7 @@ This allows a platform to explain:
 - why the new information mattered; and
 - how the resulting knowledge changed.
 
-**Preserving unresolved knowledge until more evidence becomes available.**
+**Unresolved knowledge should remain explicitly unresolved until sufficient additional information becomes available to support reevaluation.**
 
 ---
 
@@ -568,7 +615,7 @@ This Platform Architecture establishes common engineering principles and respons
 
 Individual eco619 platforms may apply those principles differently according to their specific purpose.
 
-For example, the **AI Document Library** applies these principles to complex operational artifacts, including documents, email, attachments, visual information, metadata, verification, relationships, evidence, and evolving knowledge.
+For example, the Continuous Intelligence Platform (CIP) applies these principles to complex operational artifacts, including documents, email, attachments, visual information, metadata, verification, relationships, evidence, and evolving knowledge.
 
 Platform-specific architecture may define responsibilities more precisely without redefining the foundational principles established here.
 
@@ -578,7 +625,7 @@ Platform-specific architecture may define responsibilities more precisely withou
 
 Current and developing architecture documents may include:
 
-- AI Document Library Architecture;
+- Continuous Intelligence Platform Architecture;
 - MIE Architecture;
 - Conversation Layer;
 - Knowledge Evolution Architecture;
@@ -590,8 +637,9 @@ Current and developing architecture documents may include:
 - Whole-Document Preservation Architecture;
 - Relationship Intelligence Architecture;
 - Answer Accountability Architecture;
-- Unknown Format & Platform Learning Architecture; and
-- Identity & Authorization Architecture.
+- Unknown Format & Platform Learning Architecture;
+- Identity & Authorization Architecture;
+- Deterministic Control Architecture;
 
 Architecture documents may exist at different maturity levels.
 
