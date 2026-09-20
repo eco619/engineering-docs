@@ -17,7 +17,7 @@ Documentation should enable future engineers to understand not only **what was d
 | **Status** | Active |
 | **Version** | 2.0 |
 | **Owner** | eco619 |
-| **Last Updated** | August 2026 |
+| **Last Updated** | September 2026 |
 
 ---
 
@@ -26,7 +26,7 @@ Documentation should enable future engineers to understand not only **what was d
 | Version | Date | Description |
 |---------|------|-------------|
 | 1.0 | July 2026 | Initial Engineering Documentation Standard |
-| 2.0 | August 2026 | Expanded documentation governance, engineering lifecycle traceability, implementation-state distinction, revision preservation, and architectural decision traceability. |
+| 2.1 | September 2026 | Updated engineering lifecycle to distinguish Integration, Implementation Verification, and Baseline Testing; clarified that documentation occurs throughout the lifecycle. |
 
 ---
 
@@ -58,7 +58,7 @@ Every engineering document should contribute to one or more of the following:
 - platform knowledge;
 - responsibility definition;
 - implementation guidance;
-- validation or verification knowledge;
+- validation, verification, or testing knowledge;
 - decision history;
 - engineering evolution; or
 - long-term maintainability.
@@ -95,16 +95,16 @@ Validation
     ↓
 Implementation
     ↓
-Verification
-    ↓
 Integration
     ↓
-Documentation
+Implementation Verification
+    ↓
+Baseline Testing
     ↓
 Continuous Evolution
 ```
 
-These terms describe **engineering phases and activities**.
+These terms describe engineering phases and activities. Documentation occurs throughout the lifecycle and preserves the engineering knowledge, decisions, results, and evolution produced during each applicable phase.
 
 They are not interchangeable document-status labels.
 
@@ -124,16 +124,22 @@ That history should be expressed explicitly:
 Component Responsibility Established
               │
               ▼
-     Standalone Validation
+      Standalone Validation
               │
               ▼
-        Validation Passed
+         Validation Passed
               │
               ▼
-   Platform Implementation
+    Platform Implementation
               │
               ▼
-       Later Lifecycle
+          Integration
+              │
+              ▼
+ Implementation Verification
+              │
+              ▼
+       Baseline Testing
 ```
 
 A component that previously passed standalone Validation does not return to the Validation phase merely because it is now being implemented within a larger platform.
@@ -141,6 +147,8 @@ A component that previously passed standalone Validation does not return to the 
 Likewise, describing the current platform as being in Implementation does not invalidate the earlier Validation work performed on its component responsibilities.
 
 Documentation should preserve both facts.
+
+Later Integration, Implementation Verification, and Baseline Testing should likewise be documented as subsequent engineering states without erasing or redefining the completed Validation history that preceded them.
 
 ---
 
@@ -318,12 +326,13 @@ Presents the engineering architecture, standard, specification, rationale, resea
 
 Explains important constraints, tradeoffs, assumptions, boundaries, or design decisions.
 
-## Validation / Verification Information
+## Validation / Verification / Testing Information
 
 Where relevant to the subject of the document, documentation may record:
 
 - validation previously performed;
 - verification performed at the applicable lifecycle stage;
+- baseline testing performed where applicable;
 - test conditions;
 - observed results;
 - known limitations; and
@@ -466,10 +475,12 @@ Documentation should distinguish among:
 - validation results;
 - implementation activity;
 - verification results;
-- architectural intent;
-- engineering inference;
-- planned capability; and
-- future possibility.
+- implementation activity;
+- verification results;
+- integration activity;
+- implementation verification results;
+- baseline testing results;
+- other verification results;
 
 These descriptions should correspond to the actual engineering lifecycle rather than being converted into an artificial maturity hierarchy.
 
@@ -515,6 +526,8 @@ Typical categories include:
 - Research
 - Validation Records
 - Verification Records
+- Baseline Testing Records
+- Verification Records
 - Governance
 - Roadmaps
 - Engineering Evolution
@@ -536,6 +549,10 @@ Valid reasons may include:
 - implementation findings;
 - validation results;
 - verification results;
+- integration findings;
+- implementation verification results;
+- baseline testing results;
+- other verification results;
 - discovered limitations;
 - security requirements;
 - technology evolution;
@@ -600,13 +617,17 @@ Architecture preserves design intent.
 
 Responsibility establishes boundaries.
 
-Validation establishes that the defined component responsibility performs as intended before implementation into the larger platform.
+Validation establishes that the defined component responsibility performs as intended before incorporation into the larger platform.
 
 Implementation incorporates those validated responsibilities into the platform.
 
-Verification evaluates the resulting behavior at its applicable lifecycle stage.
+Integration establishes their connected operation as part of the larger system.
 
-Integration establishes their operation as part of the larger system.
+Implementation Verification establishes that the implemented and integrated platform operates in accordance with its defined architecture, responsibilities, and execution requirements.
+
+Baseline Testing evaluates the integrated platform against known operational information and expected outcomes to establish a reference for continued engineering evaluation and evolution.
+
+Verification remains an engineering activity wherever claims, behavior, information, or results require independent confirmation.
 
 Revision history preserves evolution.
 
