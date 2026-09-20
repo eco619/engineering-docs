@@ -60,7 +60,7 @@ Repository names should:
 Examples include:
 
 - engineering-docs
-- ai-platform
+- platform-tools
 - project-tools
 
 Repository names should remain stable over time.
@@ -145,6 +145,7 @@ Record names should:
 - Remain consistent across related records.
 - Support future expansion without requiring widespread renaming.
 - Preserve engineering relationships whenever practical.
+- Distinguish source information, derived information, observations, evidence, and other record responsibilities when those distinctions are architecturally significant.
 
 Record identifiers may follow separate engineering standards where appropriate.
 
@@ -157,6 +158,18 @@ Abbreviations should be used only when they are widely understood or clearly imp
 Avoid creating project-specific abbreviations that require additional explanation.
 
 When in doubt, use complete words.
+
+Platform, system, or architectural abbreviations may be used after the complete name has been established within the applicable context.
+
+---
+
+# Naming Changes
+
+A change in terminology does not automatically require renaming repositories, directories, files, identifiers, paths, or historical records.
+
+Before changing an established name, the engineering impact on references, automation, integrations, source control history, documentation, and historical continuity should be considered.
+
+Historical names should remain unchanged where they identify the actual repository, artifact, path, decision, or engineering state that existed at the time.
 
 ---
 
