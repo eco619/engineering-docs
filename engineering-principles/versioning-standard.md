@@ -51,6 +51,7 @@ Example:
 ```text
 1.0.0
 1.1.0
+1.1.1
 2.0.0
 ```
 
@@ -62,7 +63,7 @@ Increase the **MAJOR** version when changes fundamentally alter the engineering 
 
 Examples include:
 
-- New platform architecture
+- Fundamental change to platform architecture
 - Significant architectural redesign
 - Major engineering framework revisions
 - Breaking engineering changes
@@ -103,7 +104,7 @@ Examples include:
 
 - Grammar corrections
 - Formatting improvements
-- Clarifications
+- Clarifications that do not alter engineering intent or requirements
 - Typographical corrections
 - Documentation wording improvements that do not alter engineering intent
 
@@ -137,7 +138,19 @@ Typical version history information may include:
 - Engineering significance
 - Reason for the revision
 
+Version history should preserve the version identifier actually assigned at the time of each revision. Historical version numbers should not be rewritten solely to conform to a later versioning convention.
+
 Version history should improve traceability without becoming unnecessarily detailed.
+
+---
+
+# Version Scope
+
+A version number applies to the engineering artifact or baseline to which it is assigned.
+
+Document versions, architecture versions, repository releases, software versions, and platform releases may evolve independently unless an engineering requirement explicitly establishes a shared version.
+
+A change to one versioned artifact does not automatically require changing the version of related artifacts.
 
 ---
 
@@ -147,7 +160,17 @@ Engineering documents within a repository should follow a consistent versioning 
 
 Engineering artifacts that evolve together should maintain compatible version histories whenever practical.
 
-Version numbers should be easy to understand and should accurately represent the maturity of the engineering work.
+Version numbers should be easy to understand and should accurately represent the significance of changes to the versioned engineering baseline.
+
+Version numbers do not represent engineering lifecycle phase, document status, implementation status, or platform maturity. These should be identified separately where relevant.
+
+For example:
+
+```text
+Document Version: 2.1.0
+Document Status: Active
+Engineering Phase: Baseline Testing
+```
 
 ---
 
@@ -155,7 +178,7 @@ Version numbers should be easy to understand and should accurately represent the
 
 Version numbers are more than identifiers.
 
-They document the evolution of engineering knowledge, architectural decisions, and platform maturity.
+They document the evolution of engineering knowledge, architectural decisions, and established engineering baselines.
 
 A consistent versioning strategy preserves engineering history while providing clear reference points for future development.
 
