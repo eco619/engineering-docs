@@ -65,6 +65,7 @@ Common branch types include:
 - research    Exploratory engineering work
 - config      Configuration changes
 - chore       Repository maintenance
+- arch        Architectural changes and decisions
 
 ---
 
@@ -74,15 +75,18 @@ Branches should follow this format:
 
 ```text
 <type>/<short-description>
+```
 
-Branch names should be lowercase and use hyphens (-) to separate words.
+Branch names should be lowercase and use hyphens (`-`) to separate words.
 
 For example:
 
+```text
 docs/engineering-documentation-standard
 feat/document-intelligence
 fix/ocr-empty-page-detection
 ```
+
 # Engineering Philosophy
 
 Branching is part of engineering control.
