@@ -10,8 +10,6 @@ The objective is to provide a predictable organizational framework that allows e
 
 # This standard defines how engineering repositories should be organized and maintained across eco619.
 
-This standard defines how engineering repositories should be organized across eco619.
-
 It applies to:
 
 - Engineering standards
@@ -44,9 +42,7 @@ Repository organization should make engineering intent easier to understand.
 
 # Repository Organization
 
-Each repository should present information in a logical progression.
-
-A repository should organize engineering information in a logical progression. Typical categories include:
+Each repository should organize engineering information in a logical progression. Typical categories include:
 
 - Repository overview
 - Architecture
@@ -71,7 +67,7 @@ Examples include:
 - Architecture
 - Standards
 - Specifications
-- Design decisions
+- Architectural Decision Records
 - Research
 - Operational guidance
 - User documentation
@@ -123,13 +119,15 @@ Documentation should explain.
 
 Architecture should organize.
 
+Architectural Decision Records should preserve significant engineering decisions and their rationale.
+
 Standards should govern.
 
 Implementation should execute.
 
 Configuration should adapt.
 
-Testing should validate.
+Testing should evaluate behavior and results.
 
 Automation should support engineering activities.
 
@@ -149,6 +147,16 @@ Repository independence improves maintainability, reduces hidden dependencies, a
 
 ---
 
+# Structural Changes
+
+Repository structure should evolve intentionally.
+
+Moving or renaming established directories, files, or engineering artifacts should consider the effect on references, automation, integrations, source-control history, documentation, and historical continuity.
+
+Structural changes should improve engineering understanding or maintainability rather than reorganize a repository solely for cosmetic consistency.
+
+---
+
 # Scalability
 
 Repository organization should accommodate future growth without requiring major restructuring.
@@ -158,7 +166,7 @@ A well-designed repository should:
 - Support additional documentation.
 - Support additional software components.
 - Allow new engineering standards.
-- Support evolving AI capabilities.
+- Support evolving engineering and platform capabilities.
 - Remain understandable as the platform grows.
 
 Repository organization should evolve intentionally rather than reactively.
