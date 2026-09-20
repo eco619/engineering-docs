@@ -154,6 +154,8 @@ Unified Platform
 Implementation
 ```
 
+As platform engineering progresses, the unified platform may subsequently move through Integration, Implementation Verification, and Baseline Testing while retaining the completed Validation history of the individual component responsibilities incorporated into it.
+
 The fact that the larger platform is in Implementation does not mean
 that its individual components have not been validated.
 
@@ -245,35 +247,33 @@ Validation
     ↓
 Implementation
     ↓
-Verification
-    ↓
 Integration
     ↓
-Documentation
+Implementation Verification
+    ↓
+Baseline Testing
     ↓
 Continuous Evolution
 ```
+
+Documentation occurs throughout the engineering lifecycle and should preserve the engineering decisions, validation results, implementation findings, verification results, testing results, and architectural evolution produced during each applicable phase.
 
 The lifecycle describes the progression of the engineering work being
 performed. Change-management records should identify the component,
 responsibility, or platform to which a lifecycle phase applies.
 
-For an established platform or a previously validated component being
-incorporated during Implementation, change management should generally
-include:
+For an established platform or a previously validated component progressing through the engineering lifecycle, change management should generally include:
 
 -   Identify the engineering need or defect.
 -   Identify the component, responsibility, or platform affected.
--   Determine whether the issue concerns architecture, core
-    responsibility, or the current Implementation boundary.
+-   Determine whether the issue concerns architecture, core responsibility, an implementation boundary, integration, verification, testing, or another applicable engineering   boundary.
 -   Evaluate broader engineering impact.
 -   Review alternatives when appropriate.
 -   Preserve previously validated responsibilities unless engineering
     evidence demonstrates that they require change.
 -   Make the narrowest appropriate correction.
 -   Perform applicable retesting.
--   Continue the current Implementation work when the correction does
-    not alter the established core responsibility.
+-   Continue the applicable engineering work when the correction does not alter the established core responsibility.
 -   Perform additional lifecycle work when a change materially affects
     architecture or responsibility.
 -   Update engineering documentation when the engineering baseline
@@ -305,6 +305,8 @@ Considerations include:
 -   Testing
 -   Previous Validation
 -   Current engineering phase
+-   Implementation Verification
+-   Baseline Testing
 -   Verification
 -   Traceability
 -   Future evolution
@@ -343,6 +345,7 @@ This preserves the distinction between:
 -   implementation of that component within a larger platform; and
 -   a material change to the responsibility that was originally
     validated.
+-   Subsequent Integration, Implementation Verification, and Baseline Testing do not erase that Validation history. Findings during those phases should be evaluated according to     whether they affect the validated core responsibility, its implementation, its integration with other responsibilities, or the behavior of the integrated platform.    
 
 ------------------------------------------------------------------------
 
@@ -411,8 +414,8 @@ Whenever practical, changes should be traceable through:
 -   Code review
 -   Architectural Decision Records
 -   Engineering documentation
--   Validation or Verification records where applicable
-
+-   Validation, Implementation Verification, or Baseline Testing records where applicable
+  
 Traceability should make it possible to understand:
 
 -   What changed?
@@ -464,8 +467,6 @@ correction when the underlying responsibility remains correct.
 A core responsibility should change when engineering evidence
 demonstrates that the responsibility itself requires change.
 
-Well-managed change preserves architectural integrity, respects
-completed Validation, improves Implementation quality, and supports the
-long-term evolution of the platform.
+Well-managed change preserves architectural integrity, respects completed Validation, improves Implementation and Integration quality, supports effective Implementation Verification and Baseline Testing, and contributes to the long-term evolution of the platform.
 
 Technology should strengthen human judgment. It should never replace it.
