@@ -56,6 +56,8 @@ Reviewers should evaluate:
 - Security considerations
 - Test coverage
 - Documentation impact
+- Core responsibility impact
+- Upstream and downstream impact
 
 ---
 
@@ -66,6 +68,8 @@ Code should support the documented architecture.
 A review should confirm that the implementation does not conflict with established engineering principles, platform architecture, or approved standards.
 
 When implementation and architecture diverge, the divergence should be documented, justified, or corrected.
+
+A code change should not redefine a previously validated core responsibility merely to resolve an implementation, integration, or linkage issue. Where a change appears to affect an established core responsibility or architectural boundary, it should be evaluated under the Change Management Standard before approval.
 
 ---
 
@@ -92,14 +96,14 @@ Code changes should be tested at a level appropriate to the engineering risk.
 
 Testing may include:
 
-- Manual validation
+- Manual testing
 - Unit tests
 - Integration tests
 - Regression tests
 - Sample dataset tests
 - Edge case review
 
-Higher-risk changes should receive stronger validation.
+Higher-risk changes should receive more extensive testing and applicable engineering verification.
 
 ---
 
@@ -130,9 +134,10 @@ Before approval, confirm that:
 
 - The purpose is understandable.
 - The change is focused.
+- Established core responsibilities and architectural boundaries are preserved unless an approved engineering change requires otherwise.
 - The implementation is maintainable.
 - Known risks are documented.
-- Required tests or validations have been performed.
+- Required testing and applicable engineering verification have been performed.
 - Related documentation has been updated or intentionally deferred.
 
 ---
