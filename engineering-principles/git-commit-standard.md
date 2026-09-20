@@ -70,7 +70,17 @@ docs(research): Add OCR evaluation framework
 docs(roadmap): Update platform roadmap
 ```
 
----
+## arch
+
+Architectural changes or decisions that materially affect engineering responsibilities, boundaries, or foundational design.
+
+Examples:
+
+```text
+arch(platform): Add deterministic control boundary
+arch(information): Establish format-independent information principle
+arch(governance): Revise autonomous execution boundary
+```
 
 ## feat
 
@@ -96,6 +106,20 @@ Examples:
 fix(metadata): Correct timestamp parsing
 fix(ocr): Handle empty page detection
 fix(summary): Preserve source references
+```
+
+---
+
+## research
+
+Records exploratory engineering work, technical investigation, or evaluation that does not yet establish platform behavior or architecture.
+
+Examples:
+
+```text
+research(ocr): Evaluate handwritten annotation recovery
+research(ai-provider): Compare structured output behavior
+research(cad): Evaluate DWG information accessibility
 ```
 
 ---
@@ -232,6 +256,8 @@ Common categories include:
 - document-intelligence
 - documentation
 - github
+- governance
+- integration
 - ip
 - knowledge
 - metadata
@@ -244,6 +270,7 @@ Common categories include:
 - repository
 - research
 - roadmap
+- security
 - verification
 - visual-intelligence
 
@@ -300,6 +327,16 @@ Use an extended description when documenting:
 - Breaking changes
 - Security-related changes
 - Changes affecting multiple repositories or platforms
+- Changes associated with an Architectural Decision Record
+
+When a commit implements or documents an architectural decision recorded in an ADR, the extended description should reference the applicable ADR identifier whenever practical.
+
+For Example:
+
+```text
+arch(governance): Establish deterministic control boundary
+Implements the architectural responsibility established by ADR-0004.
+```
 
 If the summary fully explains the engineering change, an extended description is not required.
 
