@@ -138,7 +138,7 @@ Status should accurately reflect the current architectural decision.
 
 ADR decision status is separate from the eco619 engineering lifecycle.
 
-Terms such as **Validation, Implementation, Verification, and Integration** describe engineering phases and should not be substituted for ADR decision status.
+Terms such as Validation, Implementation, Integration, Implementation Verification, and Baseline Testing describe engineering phases and should not be substituted for ADR decision status.
 
 ---
 
@@ -176,20 +176,22 @@ Validation
     ↓
 Implementation
     ↓
-Verification
-    ↓
 Integration
     ↓
-Documentation
+Implementation Verification
+    ↓
+Baseline Testing
     ↓
 Continuous Evolution
 ```
+
+Documentation occurs throughout the engineering lifecycle and preserves the decisions, validation, implementation findings, verification results, testing results, and architectural evolution produced during each phase.
 
 An ADR will commonly originate during Question, Architecture, or Responsibility when a significant architectural choice must be established.
 
 An ADR may also become necessary during a later phase if new engineering evidence demonstrates that an established architectural responsibility or boundary should be reconsidered.
 
-The discovery of an issue during Implementation, Verification, or Integration does not automatically invalidate an earlier architectural decision. The issue should first be evaluated to determine whether it concerns the architecture itself or the implementation of that architecture.
+The discovery of an issue during Implementation, Integration, Implementation Verification, or Baseline Testing does not automatically invalidate an earlier architectural decision. The issue should first be evaluated to determine whether it concerns the architecture itself or the implementation of that architecture.
 
 ---
 
@@ -213,7 +215,7 @@ An ADR does not replace:
 - Engineering Standards
 - Technical Specifications
 - Implementation Documentation
-- Validation or Verification Records
+- Validation, Implementation Verification, or Baseline Testing Records
 
 Instead, ADRs explain why significant engineering decisions were made.
 
@@ -223,7 +225,7 @@ Instead, ADRs explain why significant engineering decisions were made.
 
 Engineering decisions should evolve intentionally.
 
-New information, changing technologies, implementation findings, verification findings, or improved engineering understanding may justify new architectural decisions.
+New information, changing technologies, implementation findings, implementation verification findings, baseline testing findings, or improved engineering understanding may justify new architectural decisions.
 
 When this occurs, new ADRs should extend the engineering history rather than replace it.
 
